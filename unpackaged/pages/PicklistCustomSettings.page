@@ -1,0 +1,22 @@
+<apex:page controller="Custom_settingsController" >
+    <apex:pageBlock >
+        <apex:form >
+            <apex:actionFunction name="rerenderCities" rerender="ListCity" >
+                <apex:param name="stateParameter" assignTo="{!state}" value="" />
+            </apex:actionFunction>
+            
+            <apex:pageblocksection >
+                State <apex:selectList id="ListState" value="{!state}" size="1" onchange="rerenderCities(this.value)">
+                <apex:selectOptions value="{!Statelist}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageblocksection>
+            
+            <apex:pageblocksection >
+                City <apex:selectList id="ListCity" value="{!city}" size="1">
+                <apex:selectOptions value="{!CityList}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageblocksection>
+            
+        </apex:form>
+    </apex:pageBlock>
+</apex:page>
