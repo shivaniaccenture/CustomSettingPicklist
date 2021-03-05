@@ -7,7 +7,7 @@
             
             <apex:pageblocksection >
                 State <apex:selectList id="ListState" value="{!state}" size="1" onchange="rerenderCities(this.value)">
-                <apex:selectOptions value="{!Statelist}"></apex:selectOptions>
+                <apex:selectOptions value="{!StateList}"></apex:selectOptions>
                 </apex:selectList>
             </apex:pageblocksection>
             

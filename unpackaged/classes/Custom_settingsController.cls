@@ -1,13 +1,13 @@
 public class Custom_settingsController {
 	public String state { get; set; }
     public String city{ get; set;}
-    Map<String, StateCityDetail__c> sclist = new Map<String,StateCityDetail__c>();
+    public Map<String, StateCityDetail__c> sclist { get; set; }
     
     public Custom_settingsController(){
-        city='select';
-        sclist=StateCityDetail__c.getall();
+        sclist = StateCityDetail__c.getall();
     }
     public List<SelectOption> getCityList(){
+		
         list<selectoption> clist = new list<selectoption>();
         clist.add(new selectoption('','--Select--'));
          if(state==null){
